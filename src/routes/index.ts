@@ -3,7 +3,7 @@ import productRoutes from "./products";
 import categoryRoutes from "./categories";
 import tagRoutes from "./tags";
 import userRoutes from "./user";
-
+import reviewsRoutes from "./reviews";
 class AppRouter {
  private router: Router;
 
@@ -17,6 +17,7 @@ class AppRouter {
   this.router.use("/categories", categoryRoutes);
   this.router.use("/tags", tagRoutes);
   this.router.use("/users", userRoutes);
+  this.router.use("/reviews", reviewsRoutes);
  }
 
  public getRouter(): Router {

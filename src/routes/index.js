@@ -8,6 +8,7 @@ const products_1 = __importDefault(require("./products"));
 const categories_1 = __importDefault(require("./categories"));
 const tags_1 = __importDefault(require("./tags"));
 const user_1 = __importDefault(require("./user"));
+const reviews_1 = __importDefault(require("./reviews"));
 class AppRouter {
     constructor() {
         this.router = (0, express_1.Router)();
@@ -18,6 +19,7 @@ class AppRouter {
         this.router.use("/categories", categories_1.default);
         this.router.use("/tags", tags_1.default);
         this.router.use("/users", user_1.default);
+        this.router.use("/reviews", reviews_1.default);
     }
     getRouter() {
         return this.router;

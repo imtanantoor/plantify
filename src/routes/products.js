@@ -11,9 +11,20 @@ class ProductRouter {
         this.router.get("/", this.getProducts);
     }
     getProduct(req, res) {
-        res
-            .status(200)
-            .send({ message: "Hello from product route", data: { id: req.params.id } });
+        res.status(200).send({
+            message: "Hello from product route",
+            data: {
+                id: req.params.id,
+                name: "Some product",
+                description: "some description",
+                price: 100,
+                stock: 10,
+                images: [],
+                reviews: [],
+                categories: [],
+                tags: [],
+            },
+        });
     }
     getProducts(_req, res) {
         res.status(200).send({ message: "Hello from product route" });
