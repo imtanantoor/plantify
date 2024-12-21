@@ -23,6 +23,7 @@ class ReviewsRoutes {
             images: [],
             rating: 4.5,
             comment: "Great product",
+            reviewerId: 1,
             createdAt: new Date(),
             updatedAt: new Date(),
         });
