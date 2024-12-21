@@ -2,7 +2,7 @@ import { Router, Request, Response } from "express";
 import categories from "./categories";
 
 class ProductRouter {
- private router: Router;
+ private readonly router: Router;
 
  constructor() {
   this.router = Router();

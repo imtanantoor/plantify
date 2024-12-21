@@ -1,7 +1,7 @@
 import { Request, Response, Router } from "express";
 
 class ReviewsRoutes {
- private router: Router;
+ private readonly router: Router;
  constructor() {
   this.router = Router();
   this.setupRoutes();

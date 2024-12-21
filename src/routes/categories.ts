@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
 
 class CategoryRouter {
- private router: Router;
+ private readonly router: Router;
 
  constructor() {
   this.router = Router();

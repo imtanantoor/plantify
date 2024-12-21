@@ -5,7 +5,7 @@ import tagRoutes from "./tags";
 import userRoutes from "./user";
 import reviewsRoutes from "./reviews";
 class AppRouter {
- private router: Router;
+ private readonly router: Router;
 
  constructor() {
   this.router = Router();

@@ -4,7 +4,7 @@ import cors from "cors";
 import indexRoutes from "./routes";
 
 class App {
- private app: Application;
+ private readonly app: Application;
 
  constructor() {
   this.app = express();
