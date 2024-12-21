@@ -4,7 +4,7 @@
   "description": "Plantify is a ecommerce platform to buy and sell plants and seeds, with special free to use A.I disease detection tool to hook users.",
   "main": "src/index.js",
   "scripts": {
-    "dev": "npx tsc & nodemon src/index.js",
+    "dev": "npx tsc & nodemon src/index.ts",
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +14,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "helmet": "^8.0.0"
+    "helmet": "^8.0.0",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",

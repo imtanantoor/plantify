@@ -1,17 +1,33 @@
-
-import express from "express";
-import constants from "./utils/constants";
+import express, { Application, Request, Response } from "express";
 import helmet from "helmet";
 import cors from "cors";
+import indexRoutes from "./routes";
 
-const app = express();
+class App {
+ private app: Application;
 
-app.use(express.json({ limit: "50mb" }));
-app.use(helmet());
-app.use(cors({ origin: "*" }));
+ constructor() {
+  this.app = express();
+  this.setupMiddleware();
+  this.setupRoutes();
+ }
 
-app.get("/", (_req, res) => {
-  res.status(200).send({ message: "Hello" });
-});
+ private setupMiddleware(): void {
+  this.app.use(express.json({ limit: "50mb" }));
+  this.app.use(helmet());
+  this.app.use(cors({ origin: "*" }));
+  this.app.use("/v1", indexRoutes);
+ }
 
-export default app
+ private setupRoutes(): void {
+  this.app.get("/", (_req: Request, res: Response) => {
+   res.status(200).send({ message: "Hello" });
+  });
+ }
+
+ public getApp(): Application {
+  return this.app;
+ }
+}
+
+export default new App().getApp();
