@@ -1,0 +1,9 @@
+model Review {
+    id Int @id @default(autoincrement())
+    customerId Int
+    customer Customer @relation(fields: [customerId], references: [id])
+    rating Int
+    comment String
+    reviewDate DateTime @default(now())
+    images ReviewImage[]
+}

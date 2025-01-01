@@ -1,0 +1,7 @@
+model ReviewImage {
+    id Int @id @default(autoincrement())
+    reviewId Int
+    review Review @relation(fields: [reviewId], references: [id])
+    imageUrl String
+    uploadedAt DateTime @default(now())
+}
