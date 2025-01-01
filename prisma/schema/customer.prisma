@@ -8,4 +8,6 @@ model Customer {
     reviews Review[]
     orders Order[]
     addresses Address[]
+    aiToken AiToken?
+    diseaseDetection DiseaseDetection[]
 }
