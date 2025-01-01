@@ -1,0 +1,7 @@
+model ProductImage {
+    id Int @id @default(autoincrement())
+    productId Int
+    product Product @relation(fields: [productId], references: [id])
+    imageUrl String
+    uploadedAt DateTime @default(now())
+}

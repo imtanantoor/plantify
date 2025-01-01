@@ -1,0 +1,8 @@
+model Category {
+    id Int @id @default(autoincrement())
+    name String
+    products Product[]
+    subCategories Category[] @relation("CategoryToSubCategory")
+    parentCategory Category? @relation("CategoryToSubCategory", fields: [parentId], references: [id])
+    parentId Int?
+}

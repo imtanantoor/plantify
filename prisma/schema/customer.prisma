@@ -6,4 +6,5 @@ model Customer {
     registrationDate DateTime @default(now())
     updatedAt DateTime @updatedAt
     reviews Review[]
+    orders Order[]
 }

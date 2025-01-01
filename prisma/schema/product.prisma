@@ -8,4 +8,6 @@ model Product {
     updatedAt DateTime @updatedAt
     tags Tag[]
     reviews Review[]
+    images ProductImage[]
+    categories Category[]
 }

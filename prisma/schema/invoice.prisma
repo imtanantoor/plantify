@@ -1,0 +1,12 @@
+model Invoice {
+    id Int @id @default(autoincrement())
+    invoiceDate DateTime @default(now())
+    discount Float
+    tax Float
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    status String
+    totalAmount Float
+    orderId Int @unique
+    order Order @relation(fields: [orderId], references: [id])
+}
