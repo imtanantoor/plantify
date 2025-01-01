@@ -7,4 +7,5 @@ model Customer {
     updatedAt DateTime @updatedAt
     reviews Review[]
     orders Order[]
+    addresses Address[]
 }
