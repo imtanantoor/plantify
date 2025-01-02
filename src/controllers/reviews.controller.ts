@@ -35,6 +35,17 @@ class ReviewsController {
       res.status(500).send({ message: "Internal server error" });
     }
   }
+
+  async createReview(req: Request, res: Response) {
+    try {
+      const review = await Review.create({
+        data: req.body,
+      });
+      res.status(201).send({ data: review });
+    } catch (error) {
+      res.status(500).send({ message: "Internal server error" });
+    }
+  }
 }
 
 export default new ReviewsController();
