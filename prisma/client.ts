@@ -1,18 +1,18 @@
 import { PrismaClient } from '@prisma/client'
 
-class Database {
-  private static instance: Database;
+class PrismaInstance {
+  private static instance: PrismaInstance;
   private readonly prisma: PrismaClient;
 
   private constructor() {
     this.prisma = new PrismaClient();
   }
 
-  public static getInstance(): Database {
-    if (!Database.instance) {
-      Database.instance = new Database();
+  public static getInstance(): PrismaInstance {
+    if (!PrismaInstance.instance) {
+      PrismaInstance.instance = new PrismaInstance();
     }
-    return Database.instance;
+    return PrismaInstance.instance;
   }
 
   public getClient(): PrismaClient {
@@ -20,4 +20,4 @@ class Database {
   }
 }
 
-export default Database.getInstance().getClient();
+export default PrismaInstance.getInstance().getClient();
