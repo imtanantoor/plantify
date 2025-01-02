@@ -53,6 +53,24 @@ class TagsController {
       });
     }
   }
+
+  async deleteTag(req: Request, res: Response): Promise<void> {
+    try {
+      await Tags.delete({
+        where: {
+          id: parseInt(req.params.id),
+        },
+      });
+      res.status(200).send({
+        message: "Tag deleted",
+      });
+    } catch (error) {
+      res.status(500).send({
+        message: "Error deleting tag",
+        error: error,
+      });
+    }
+  }
 }
 
 export default new TagsController();

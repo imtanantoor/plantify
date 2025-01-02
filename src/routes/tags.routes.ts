@@ -14,6 +14,7 @@ class TagsRoutes {
       .get("/", tagsController.getTags)
       .post("/", tagsController.createTag);
     this.router.get("/:id", tagsController.getTag);
+    this.router.delete("/:id", tagsController.deleteTag);
   }
 
   public getRouter(): Router {
