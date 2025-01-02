@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
 
 class UserController {
-  constructor() {}
-
   async getUsers(_req: Request, res: Response): Promise<void> {
     res.status(200).send({ message: "Hello from user route" });
   }
