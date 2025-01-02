@@ -10,7 +10,9 @@ class TagsRoutes {
   }
 
   private setupRoutes(): void {
-    this.router.get("/", tagsController.getTags);
+    this.router
+      .get("/", tagsController.getTags)
+      .post("/", tagsController.createTag);
     this.router.get("/:id", tagsController.getTag);
   }
 
