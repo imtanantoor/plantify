@@ -9,7 +9,9 @@ class ReviewsRoutes {
   }
 
   private setupRoutes(): void {
-    this.router.get("/", reviewsController.getReviews);
+    this.router
+      .get("/", reviewsController.getReviews)
+      .post("/", reviewsController.createReview);
     this.router.get("/product/:productId", reviewsController.getProductReviews);
     this.router.get("/user/:userId", reviewsController.getUserReviews);
   }
