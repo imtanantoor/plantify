@@ -1,7 +1,7 @@
 import express, { Application, Request, Response } from "express";
 import helmet from "helmet";
 import cors from "cors";
-import indexRoutes from "./routes";
+import indexRoutes from "./routes/index.routes";
 
 class App {
  private readonly app: Application;
