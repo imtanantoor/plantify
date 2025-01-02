@@ -21,7 +21,7 @@ class App {
 
  private setupRoutes(): void {
   this.app.get("/", (_req: Request, res: Response) => {
-   res.status(200).send({ message: "Hello" });
+   res.status(200).send({ message: "Hello World" });
   });
  }
 

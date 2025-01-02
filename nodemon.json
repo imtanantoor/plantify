@@ -1,5 +1,0 @@
-{
-  "execMap": {
-    "ts": "npx tsc && ts-node"
-  }
-}
