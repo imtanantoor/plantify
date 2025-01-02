@@ -1,4 +1,5 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
+import tagsController from "../controllers/tags.controller";
 
 class TagsRoutes {
   private readonly router: Router;
@@ -9,24 +10,8 @@ class TagsRoutes {
   }
 
   private setupRoutes(): void {
-    this.router.get("/", this.getTags);
-    this.router.get("/:id", this.getTag);
-  }
-
-  private getTags(_req: Request, res: Response): void {
-    res.status(200).send({ message: "Hello from tag route", data: [] });
-  }
-
-  private getTag(req: Request, res: Response) {
-    res.status(200).send({
-      data: {
-        id: req.params.id,
-        name: "Some tag",
-        description: "some description",
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-    });
+    this.router.get("/", tagsController.getTags);
+    this.router.get("/:id", tagsController.getTag);
   }
 
   public getRouter(): Router {
