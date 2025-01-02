@@ -1,5 +1,6 @@
-import { Router, Request, Response } from "express";
-
+import { Router } from "express";
+import categoriesController from "../controllers/categories.controller";
+    
 class CategoryRouter {
  private readonly router: Router;
 
@@ -9,22 +10,8 @@ class CategoryRouter {
  }
 
  private setupRoutes(): void {
-  this.router.get("/:id", this.getCategory);
-  this.router.get("/", this.getCategories);
- }
-
- private getCategory(req: Request, res: Response): void {
-  res.status(200).send({
-   message: "Hello from category route",
-   data: { id: req.params.id, name: "yo" },
-  });
- }
-
- private getCategories(_req: Request, res: Response): void {
-  res.status(200).send({
-   message: "Hello from category route",
-   data: [{ name: "Outdoor plants", id: 1 }],
-  });
+  this.router.get("/:id", categoriesController.getCategory);
+  this.router.get("/", categoriesController.getCategories);
  }
 
  public getRouter(): Router {
